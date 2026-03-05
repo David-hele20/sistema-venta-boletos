@@ -40,11 +40,6 @@ El sistema está compuesto por las siguientes clases:
 
 ---
 
-##  Diagrama de Clases
-
-(Insertar aquí la imagen del diagrama UML)
-
----
 
 ##  Funcionalidades Principales
 
