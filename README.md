@@ -8,61 +8,56 @@ comprar boletos y recibir confirmaciones de compra.
 
 ---
 
-##  Objetivos del Sistema
+### Relaciones entre las clases
 
-- Permitir la búsqueda de conciertos por nombre, fecha o artista.
-- Mostrar disponibilidad de asientos.
-- Permitir la compra de boletos.
-- Generar confirmación de compra.
+## Usuario – Compra
 
----
+La clase **Usuario** tiene relación con la clase **Compra**, porque un usuario puede realizar una o varias compras dentro del sistema.
 
-##  Modelo UML
-
-El sistema está compuesto por las siguientes clases:
-
-- Usuario
-- Compra
-- Boleto
-- Asiento
-- Concierto
-- Lugar
-- Artista
-
-### Relaciones principales
-
-- Un Usuario puede realizar múltiples Compras.
-- Una Compra contiene uno o varios Boletos.
-- Cada Boleto está asociado a un Asiento y un Concierto.
-- Un Concierto se realiza en un Lugar.
-- Un Concierto puede tener múltiples Artistas.
-- Un Lugar contiene múltiples Asientos.
-
----
+Cada vez que un usuario adquiere boletos para un concierto, el sistema registra esa acción como una compra.
 
 
-##  Funcionalidades Principales
+## Compra – Boleto
 
-### Usuario
-- buscarConcierto()
-- comprarBoletos()
+La clase **Compra** tiene relación con la clase **Boleto**, porque una compra contiene los boletos que el usuario adquiere.
 
-### Compra
-- agregarBoleto()
-- confirmarCompra()
+Cuando un usuario realiza una compra, puede adquirir uno o varios boletos para un concierto.
 
-### Boleto
-- marcarVendido()
 
----
+## Boleto – Asiento
 
-##  Tecnologías Utilizadas
+La clase **Boleto** tiene relación con la clase **Asiento**, porque cada boleto corresponde a un asiento específico dentro del lugar donde se realiza el concierto.
 
-- Modelado UML en StarUML
-- GitHub para documentación
+Esto permite controlar qué asientos están disponibles y cuáles ya fueron vendidos.
 
----
 
-##  Autor
+## Boleto – Concierto
+
+La clase **Boleto** tiene relación con la clase **Concierto**, porque cada boleto permite el acceso a un concierto específico.
+
+Cuando el usuario compra un boleto, este queda vinculado al concierto correspondiente.
+
+
+## Concierto – Lugar
+
+La clase **Concierto** tiene relación con la clase **Lugar**, porque cada concierto se realiza en un lugar determinado.
+
+El lugar define características como su nombre, dirección y capacidad de personas.
+
+
+## Concierto – Artista
+
+La clase **Concierto** tiene relación con la clase **Artista**, porque los conciertos cuentan con uno o varios artistas que se presentan en el evento.
+
+Además, un artista puede participar en diferentes conciertos.
+
+
+## Lugar – Asiento
+
+La clase **Lugar** tiene relación con la clase **Asiento**, porque los lugares donde se realizan los conciertos contienen los asientos disponibles para el público.
+
+Estos asientos permiten organizar la distribución de los espectadores dentro del lugar.
+
+#  Autor
 
 David Hernandez Leyton
